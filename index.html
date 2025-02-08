@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad JQuery</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="acceso">
+        <h1>Acceso</h1>
+        <div class="acceso-container">
+          <p class="mensaje-login">
+            <span>Inicia sesión con tu cuenta</span
+            ><span>o crea una cuenta nueva.</span>
+          </p>
+          <div class="login-container">
+            <div class="login-box">
+              <p>¿Tienes ya una cuenta?</p>
+              <button id="iniciar-sesion">Iniciar sesion</button>
+            </div>
+            <div class="login-box">
+              <p>¿No tienes cuenta?</p>
+              <button id="crear-cuenta">Crear una cuenta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cuenta">
+        <h1>Cuenta</h1>
+        <div class="cuenta-login">
+          <form action="#">
+            <div class="inputs-login">
+              <input
+                type="mail"
+                id="nombre-login"
+                placeholder="Correo electrónico o nombre de accesos"
+              />
+              <input
+                type="password"
+                id="password-login"
+                placeholder="Contraseña"
+              />
+            </div>
+            <div class="action-login">
+              <div class="link">
+                <img src="./img/chevron-right-solid.svg" alt="" />
+                <a href="#">¿Has olvidado la contraseña?</a>
+              </div>
+              <button id="login" class="disabledBtn" disabled="true">
+                Iniciar sesión
+              </button>
+            </div>
+          </form>
+
+          <div class="acceso-redes">
+            <p class="mensaje-redes">Inicia sesión con</p>
+            <div class="redes-login">
+              <img src="./img/facebook-brands-solid.svg" alt="" />
+              <p>Facebook</p>
+            </div>
+            <div class="redes-login">
+              <img src="./img/google-brands-solid.png" alt="" />
+              <p>Google</p>
+            </div>
+          </div>
+        </div>
+        <div class="cuenta-nueva">
+          <div id="proveedor" class="nueva-cuenta-opcion">
+            <p>Eres proveedor</p>
+            <img src="./img/circle-chevron-right-solid-grey.svg" alt="" />
+          </div>
+          <div id="cliente" class="nueva-cuenta-opcion">
+            <p>Eres cliente final</p>
+            <img src="./img/circle-chevron-right-solid-grey.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
