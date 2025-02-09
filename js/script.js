@@ -120,12 +120,9 @@ $(document).ready(() => {
   // Función para habilitar/deshabilitar el botón de crear cuenta
   function enableCrearButton() {
     function setupValidation(formSelector) {
-      // Tomamos el formulario como objeto jQuery
       let $form = $(formSelector);
 
-      // Función que valida el formulario y actualiza el estado del botón
       function validateForm() {
-        // Usamos selectores relativos al formulario
         let nombre = $form.find("#nombre").val().trim();
         let correo = $form.find("#correo").val().trim();
         let password = $form.find("#password").val().trim();
@@ -140,7 +137,6 @@ $(document).ready(() => {
           confirmarPassword !== "";
         let isPasswordValid = password === confirmarPassword;
 
-        // Mostrar mensaje de error si las contraseñas no coinciden
         if (!isPasswordValid) {
           $form.find("#validPassword").show();
         } else {
@@ -160,7 +156,6 @@ $(document).ready(() => {
         }
       }
 
-      // Asignar eventos para actualizar la validación
       $form.on("input change", function () {
         validateForm();
       });
@@ -185,17 +180,6 @@ $(document).ready(() => {
         }
       });
 
-      // Alternar visibilidad de la contraseña (botón "eye")
-      $form.find(".eye").on("click", function () {
-        let $inputField = $(this).siblings("input");
-        let isPassword = $inputField.attr("type") === "password";
-        $inputField.attr("type", isPassword ? "text" : "password");
-        $(this).attr(
-          "src",
-          isPassword ? "./img/eye-solid.svg" : "./img/eye-slash-solid.svg"
-        );
-      });
-
       // Manejar el estado del checkbox (alternar clases)
       $form.find("#terminos").on("click", function () {
         let $checkbox = $(this);
@@ -207,18 +191,13 @@ $(document).ready(() => {
         validateForm();
       });
 
-      // Ejecutar la validación inicial al cargar el formulario
       validateForm();
     }
 
-    // Ahora, aplica la validación a ambos formularios
-    // Asumiendo que los formularios tienen la clase "crear-cuenta-form"
-    // Y que, en cada uno, los IDs son los mismos: #nombre, #correo, #password, #confirmar-password, #terminos, #crearBtn, #validPassword
     setupValidation(".crear-cuenta-proveedor");
     setupValidation(".crear-cuenta-cliente");
   }
 
-  // Verificar contraseñas para mostrar el mensaje si no son iguales
   $(".input input").on("blur", function () {
     let password = $("#password");
     let confirmarContraseña = $("#confirmar-password");
@@ -242,18 +221,6 @@ $(document).ready(() => {
     }
   });
 
-  // Cambio de estado del checkbox
-  $("#terminos").on("click", function () {
-    let $checkbox = $(this);
-    console.log("Estado del checkbox:", $checkbox.prop("checked"));
-    if ($checkbox.prop("checked")) {
-      $checkbox.removeClass("not-checked").addClass("checked");
-    } else {
-      $checkbox.removeClass("checked").addClass("not-checked");
-    }
-    enableCrearButton();
-  });
-
   $(".eye").on("click", function () {
     let inputField = $(this).siblings("input");
     let isPassword = inputField.attr("type") === "password";
@@ -270,10 +237,8 @@ $(document).ready(() => {
   $(document).on("click", "#crearBtn", function (event) {
     console.log("click");
     event.preventDefault();
-    // Seleccionamos el formulario más cercano al botón y lo ocultamos
-    $(this).closest("form").slideUp(); // Ocultar el formulario actual con animación
+    $(this).closest("form").slideUp();
 
-    // Mostrar el mensaje de confirmación
     $(".confirmacion").fadeIn();
   });
 });
