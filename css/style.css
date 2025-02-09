@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
 body {
   font-family: "Open Sans";
-  margin: 0;
+  margin: 0 auto;
   background-color: #f2f2f2;
+  max-width: 1024px;
+  margin-top: 5rem;
 }
-main {
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 10rem;
+
   width: 600px;
 }
 
@@ -23,13 +25,44 @@ p {
 }
 
 button {
-  width: 80%;
+  width: 95%;
   padding: 0.75rem 1rem;
   color: #ffffff;
   background-color: #1b74e4;
   border: none;
   border-radius: 20px;
   cursor: pointer;
+}
+label {
+  padding: 0.75rem 0;
+  & p {
+    padding-left: 0.75rem;
+    border-left: 8px solid #3c3c3c;
+  }
+}
+input {
+  width: 100%;
+  border: none;
+  margin: 0;
+  font-size: 1rem;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  width: 100%;
+  border: none;
+  margin: 0;
+  font-size: 1rem;
+  background-color: transparent;
+  outline: none;
+  appearance: none;
+  background-image: url("../img/chevron-down-solid.svg");
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: right 10px center;
 }
 
 /* Acceso */
@@ -41,8 +74,8 @@ button {
 }
 
 .acceso-container {
-  width: 100%;
-  padding: 2rem 0;
+  width: calc(100% - 4rem);
+  padding: 2rem;
   display: grid;
   gap: 1.5rem;
   grid-template-rows: 1fr 1fr;
@@ -198,8 +231,8 @@ form {
   width: 100%;
   display: none; /* display: none */
   grid-template-columns: 1fr 1fr;
-  padding: 2rem 0;
-  gap: 8px;
+  padding: 0.5rem 0;
+  gap: 10px;
 }
 
 .nueva-cuenta-opcion {
@@ -213,4 +246,147 @@ form {
   & img {
     width: 30px;
   }
+}
+
+/* Crear cuenta */
+
+.crear-cuenta-proveedor {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 auto;
+}
+
+.crear-cuenta-cliente {
+  width: 100%;
+  display: none; /* display: none / flex */
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 auto;
+}
+
+.crear-cuenta-form {
+  width: calc(100% - 4rem - 20px);
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  border: 10px solid #ffffff;
+  border-radius: 8px;
+  padding: 3rem 2rem 1rem 2rem;
+  gap: 0.75rem;
+
+  & button {
+    max-height: 39px;
+    max-width: 20%;
+    margin: 0 auto;
+  }
+
+  & > :last-child {
+    align-self: center;
+  }
+}
+
+.input-registro {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: calc(100% - 1.5rem - 4px);
+  border: 2px solid #dfdfdf;
+  background-color: #ffffff;
+  display: flex;
+  padding: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  & img {
+    width: 25px;
+    cursor: pointer;
+  }
+}
+
+.campoVacioMsg {
+  display: none;
+  color: red;
+  font-size: 0.9rem;
+}
+
+.aviso {
+  font-size: 0.9rem;
+}
+
+.date-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4px;
+
+  & .aviso {
+    grid-column: 1/4;
+  }
+
+  & .campoVacio {
+    grid-column: 1/4;
+  }
+}
+
+.check-terminos {
+  border-top: 2px solid #b1b1b1;
+  border-bottom: 2px solid #b1b1b1;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  & #terminos {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center;
+  }
+
+  & #terminos-cliente {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center;
+  }
+
+  & .aviso {
+    margin: 0;
+  }
+
+  .img {
+    width: 15px;
+  }
+}
+
+.not-checked {
+  background-image: url(../img/check-solid-grey.svg);
+  background-color: #ffffff;
+  border: 2px solid #b1b1b1;
+}
+
+.checked {
+  background-image: url(../img/check-solid-white.svg);
+  background-color: #1b74e4;
+  border: 2px solid #1b74e4;
+}
+
+.confirmacion {
+  display: none;
 }

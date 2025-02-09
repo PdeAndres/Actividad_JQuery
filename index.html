@@ -10,7 +10,7 @@
     <script src="./js/script.js"></script>
   </head>
   <body>
-    <main>
+    <section>
       <div class="acceso">
         <h1>Acceso</h1>
         <div class="acceso-container">
@@ -44,6 +44,7 @@
                 type="password"
                 id="password-login"
                 placeholder="Contraseña"
+                autocomplete="current-password"
               />
             </div>
             <div class="action-login">
@@ -80,6 +81,177 @@
           </div>
         </div>
       </div>
-    </main>
+    </section>
+    <div class="crear-cuenta-proveedor">
+      <h1>Crear una cuenta Proveedor</h1>
+      <form action="" class="crear-cuenta-form">
+        <div class="input-registro">
+          <label for="nombre"><p>Nombre comercial</p></label>
+          <div class="input-field">
+            <div class="input">
+              <input type="text" name="nombre" id="nombre" />
+            </div>
+
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+            <p class="aviso">
+              Nota: No hace falta que coincida con el nombre legal
+            </p>
+          </div>
+        </div>
+        <div class="input-registro">
+          <label for="correo"><p>Correo electrónico</p></label>
+          <div class="input-field">
+            <div class="input">
+              <input type="mail" name="correo" id="correo" />
+            </div>
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+          </div>
+        </div>
+        <div class="input-registro">
+          <label for="password"><p>Contraseña</p></label>
+          <div class="input-field">
+            <div class="input">
+              <input type="password" id="password" />
+              <img class="eye" src="./img/eye-slash-solid.svg" alt="" />
+            </div>
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+            <p class="campoVacioMsg" id="validPassword">
+              Las contraseñas deben ser iguales
+            </p>
+          </div>
+        </div>
+        <div class="input-registro">
+          <label for="password"><p>Confirmar Contraseña</p></label>
+          <div class="input-field">
+            <div class="input">
+              <input type="password" id="confirmar-password" />
+              <img class="eye" src="./img/eye-slash-solid.svg" alt="" />
+            </div>
+
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+          </div>
+        </div>
+        <div class="input-registro">
+          <label for="date"><p>Fecha de nacimiento</p></label>
+          <div class="date-input">
+            <div class="input">
+              <select id="year"></select>
+            </div>
+            <div class="input">
+              <select id="month">
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+              </select>
+            </div>
+            <div class="input">
+              <select id="day"></select>
+            </div>
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+            <p class="aviso">
+              No podrás cambiar tu fecha de nacimiento más adelante
+            </p>
+          </div>
+        </div>
+        <div class="check-terminos">
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              name="terminos"
+              id="terminos"
+              class="not-checked"
+            />
+          </div>
+          <p class="aviso">
+            Confirmo que acepto los términos del contrato de la cuenta y que
+            estoy de acuerdo con la política de privacidad
+          </p>
+        </div>
+
+        <button type="submit" class="disabledBtn" id="crearBtn" disabled>
+          Crear
+        </button>
+      </form>
+      <h2 class="confirmacion">Gracias por crear tu cuenta</h2>
+    </div>
+    <div class="crear-cuenta-cliente">
+      <h1>Crear una cuenta Cliente</h1>
+      <form action="" class="crear-cuenta-form">
+        <div class="input-registro">
+          <label for="nombre"><p>Nombre comercial</p></label>
+          <div class="input-field">
+            <div class="input">
+              <input type="text" name="nombre" id="nombre" />
+            </div>
+
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+            <p class="aviso">
+              Nota: No hace falta que coincida con el nombre legal
+            </p>
+          </div>
+        </div>
+        <div class="input-registro">
+          <label for="correo"><p>Correo electrónico</p></label>
+          <div class="input-field">
+            <div class="input">
+              <input type="mail" name="correo" id="correo" />
+            </div>
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+          </div>
+        </div>
+        <div class="input-registro">
+          <label for="password"><p>Contraseña</p></label>
+          <div class="input-field">
+            <div class="input">
+              <input type="password" id="password" />
+              <img class="eye" src="./img/eye-slash-solid.svg" alt="" />
+            </div>
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+            <p class="campoVacioMsg" id="validPassword">
+              Las contraseñas deben ser iguales
+            </p>
+          </div>
+        </div>
+        <div class="input-registro">
+          <label for="password"><p>Confirmar Contraseña</p></label>
+          <div class="input-field">
+            <div class="input">
+              <input type="password" id="confirmar-password" />
+              <img class="eye" src="./img/eye-slash-solid.svg" alt="" />
+            </div>
+
+            <p class="campoVacioMsg">No se puede dejar el blanco</p>
+          </div>
+        </div>
+
+        <div class="check-terminos">
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              name="terminos"
+              id="terminos"
+              class="not-checked"
+            />
+          </div>
+          <p class="aviso">
+            Confirmo que acepto los términos del contrato de la cuenta y que
+            estoy de acuerdo con la política de privacidad
+          </p>
+        </div>
+        <button type="submit" class="disabledBtn" id="crearBtn" disabled>
+          Crear
+        </button>
+      </form>
+      <h2 class="confirmacion">Gracias por crear tu cuenta</h2>
+    </div>
   </body>
 </html>
